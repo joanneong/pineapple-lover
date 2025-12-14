@@ -5,12 +5,14 @@
         <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
     </head>
     <body class="container">
-        <div class="container">
-            <h1>Pineapple Lover</h1>
-            <input type="file" accept="image/jpg, image/png" id="imgInput">
+        <div class="card">
+            <h2 style="margin-top: 0;">Pineapple Lover</h2>
             <div id="preview">
                 <img id="imgPreview" src="#" alt="User uploaded image preview">
                 <p id="previewText">Choose an image file to begin!</p>
+            </div>
+            <div class="banner">
+                <input type="file" accept="image/jpg, image/png" id="imgInput">
             </div>
             <button type="button" id="tasteButton">Taste it!</button>
             <div id="verdict">
