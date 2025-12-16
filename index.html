@@ -15,14 +15,29 @@
                 <input type="file" accept="image/jpg, image/png" id="imgInput">
             </div>
             <button type="button" id="tasteButton">Taste it!</button>
-            <div id="verdict">
-                <h3>Final Verdict</h2>
-                <p id="verdictText">This is most likely a pineapple! :)</p>
+            <div>
+                <p id="description">
+                    <span style="font-weight: bold; color: #29469B; font-size: 16px;">
+                        Pineapple Power: Pineapple Feast
+                    </span>
+                    Any image will trigger a reaction from the pineapple lover. A true pineapple lover will always 
+                    be able to distinguish between real pineapples and imposters.
+                </p>
                 <hr/>
-                <p>Top 3 predictions:</p>
-                <p id="topKText"></p>
+                <div id="verdict">
+                    <span style="font-weight: bold; color: black; font-size: 18px;">
+                        Final Verdict
+                    </span>
+                    <span id="verdictText">This is most likely a pineapple! :)</span>
+                    <span id="verdictProb">95</span>
+                </div>
                 <hr/>
-                <p>Choose another file to try again!</p>
+                <div id="topKPredictions">
+                    <p>Sulfur butterfly</p>
+                    <p>Dough, flour</p>
+                    <p>Durian, pear</p>
+                </div>
+                <p id="hint">Choose another file to try again!</p>
             </div>
         </div>
     </body>

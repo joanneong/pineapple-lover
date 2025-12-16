@@ -2,6 +2,13 @@ body {
     height: 100vh;
     margin: 0;
     padding: 0;
+    font-family: Gill Sans Condensed, Trebuchet MS, Frutiger;
+}
+
+hr {
+    border: none;
+    border-top: 2px solid black;
+    margin: 0;
 }
 
 .container {
@@ -27,8 +34,9 @@ body {
     margin: 0px 20px;
     margin-bottom: 5px;
     padding: 3px;
-    border-left: 5px solid #E2CB4B;
-    border-right: 5px solid #E2CB4B;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-image: linear-gradient(#FEFAAA, #E2CB4B, #FEFAAA) 0 1 0 1;
 }
 
 input {
@@ -36,6 +44,15 @@ input {
     margin-left: auto;
     margin-right: auto;
     width: 50%;
+    font-size: 12px;
+    font-style: italic;
+    font-weight: bold;
+}
+
+#description {
+    margin-top: 10px;
+    margin-left: 18px;
+    font-size: 13px;
 }
 
 #preview {
@@ -66,6 +83,34 @@ input {
 }
 
 #verdict {
-    display: block;
+    display: flex;
+    padding: 5px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#verdictProb {
+    font-size: 25px;
+    margin-left: auto;
+}
+
+#topKPredictions {
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+#topKPredictions p {
+    margin: 3px;
+}
+
+#hint {
+    border: 3px solid transparent;
+    border-image: linear-gradient(to right bottom, #EAD68C, #A38D35) 1 1 1 1;
+    /* border-image: linear-gradient(to right bottom, red, blue) 1 1 0 0, linear-gradient(to left top, red, blue) 0 0 1 1; */
+    /* border-image: linear-gradient(to left top, red, blue) 0 0 1 1; */
+    /* background: linear-gradient(to right bottom, red, blue) 1 1 0 0, linear-gradient(to left top, red, blue) 0 0 1 1; */
     padding: 5px;
 }
