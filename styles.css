@@ -18,12 +18,17 @@ hr {
     align-items: center;
 }
 
-.card {
-    border: 20px #F7DC5F solid;
+.cardBorder {
     border-radius: 15px;
-    padding: 30px;
-    height: 600px;
-    width: 450px;
+    padding: 20px;
+    background-color: #F7DC5F;
+    height: 590px;
+}
+
+.card {
+    padding: 20px;
+    height: 550px;
+    width: 400px;
     background-image: url("assets/card.png");
 }
 
@@ -78,10 +83,6 @@ input {
     display: none;
 }
 
-#tasteButton {
-    display: none;
-}
-
 #verdict {
     display: flex;
     padding: 5px;
@@ -103,14 +104,22 @@ input {
 }
 
 #topKPredictions p {
-    margin: 3px;
+    margin: 0px 3px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
+
 
 #hint {
     border: 3px solid transparent;
     border-image: linear-gradient(to right bottom, #EAD68C, #A38D35) 1 1 1 1;
+    font-size: 12px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 5px;
+    margin: 0px;
     /* border-image: linear-gradient(to right bottom, red, blue) 1 1 0 0, linear-gradient(to left top, red, blue) 0 0 1 1; */
     /* border-image: linear-gradient(to left top, red, blue) 0 0 1 1; */
     /* background: linear-gradient(to right bottom, red, blue) 1 1 0 0, linear-gradient(to left top, red, blue) 0 0 1 1; */
-    padding: 5px;
 }

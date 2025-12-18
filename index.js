@@ -12,16 +12,13 @@ window.addEventListener('load', () => {
 const imgInput = document.getElementById('imgInput');
 const imgPreview = document.getElementById('imgPreview');
 const previewText = document.getElementById('previewText');
-const tasteButton = document.getElementById('tasteButton');
 const verdict = document.getElementById('verdict');
 const verdictText = document.getElementById('verdictText');
-const topKText = document.getElementById('topKText');
 
 function resetElements() {
     imgPreview.src = '#';
     imgPreview.style.display = 'none';
     previewText.style.display = 'block';
-    tasteButton.style.display = 'none';
     verdict.style.display = 'none';
 }
 
@@ -36,11 +33,31 @@ imgInput.addEventListener('change', event => {
     previewText.style.display = 'none';
     imgPreview.src = imgUrl;
     imgPreview.style.display = 'block';
-    verdict.style.display = 'none';
 });
 
 imgPreview.onload = async() => {
-    tasteButton.style.display = 'block';
+    const pixels = tf.browser.fromPixels(imgPreview);
+    console.time('Prediction');
+    let result = mobileNet.predict(pixels);
+    const topK = mobileNet.getTopKClasses(result, 3);
+    console.timeEnd('Prediction');
+
+    // Set up verdict
+    verdictText.innerText = getVerdict(topK[0]);
+    verdictProb.innerText = (topK[0].value * 100).toFixed(2);
+
+    // Set up next predictions
+    const nextPredictions = document.getElementById("topKPredictions");
+    nextPredictions.replaceChildren();
+    topK.forEach(x => {
+        const nextPrediction = document.createElement("p");
+        nextPrediction.textContent = x.label;
+        const nextPredictionValue = document.createElement("span");
+        nextPredictionValue.textContent = (x.value * 100).toFixed(2);
+        nextPrediction.appendChild(nextPredictionValue);
+        nextPredictions.appendChild(nextPrediction);
+    });
+    verdict.style.display = 'flex';
 }
 
 function getVerdict(prediction) {
@@ -54,24 +71,6 @@ function getVerdict(prediction) {
 
     return "This is most likely a pineapple :)";
 }
-
-tasteButton.addEventListener('click', event => {
-    event.preventDefault();
-    tasteButton.style.display = 'none';
-
-    const pixels = tf.browser.fromPixels(imgPreview);
-    console.time('Prediction');
-    let result = mobileNet.predict(pixels);
-    const topK = mobileNet.getTopKClasses(result, 3);
-    console.timeEnd('Prediction');
-
-    verdictText.innerText = getVerdict(topK[0]);
-    topKText.innerHTML = '';
-    topK.forEach(x => {
-        topKText.innerHTML += `${x.value.toFixed(3)}: ${x.label}<br>`;
-    });
-    verdict.style.display = 'block';
-});
 
 window.addEventListener('beforeunload', () => {
     mobileNet.dispose();

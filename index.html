@@ -5,40 +5,40 @@
         <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
     </head>
     <body class="container">
-        <div class="card">
-            <h2 style="margin-top: 0;">Pineapple Lover</h2>
-            <div id="preview">
-                <img id="imgPreview" src="#" alt="User uploaded image preview">
-                <p id="previewText">Choose an image file to begin!</p>
-            </div>
-            <div class="banner">
-                <input type="file" accept="image/jpg, image/png" id="imgInput">
-            </div>
-            <button type="button" id="tasteButton">Taste it!</button>
-            <div>
-                <p id="description">
-                    <span style="font-weight: bold; color: #29469B; font-size: 16px;">
-                        Pineapple Power: Pineapple Feast
-                    </span>
-                    Any image will trigger a reaction from the pineapple lover. A true pineapple lover will always 
-                    be able to distinguish between real pineapples and imposters.
-                </p>
-                <hr/>
-                <div id="verdict">
-                    <span style="font-weight: bold; color: black; font-size: 18px;">
-                        Final Verdict
-                    </span>
-                    <span id="verdictText">This is most likely a pineapple! :)</span>
-                    <span id="verdictProb">95</span>
+        <div class="cardBorder">
+            <div class="card">
+                <h2 style="margin-top: 0;">Pineapple Lover</h2>
+                <div id="preview">
+                    <img id="imgPreview" src="#" alt="User uploaded image preview">
+                    <p id="previewText">Choose an image file to begin!</p>
                 </div>
-                <hr/>
-                <div id="topKPredictions">
-                    <p>Sulfur butterfly</p>
-                    <p>Dough, flour</p>
-                    <p>Durian, pear</p>
+                <div class="banner">
+                    <input type="file" accept="image/jpg, image/png" id="imgInput">
                 </div>
-                <p id="hint">Choose another file to try again!</p>
+                <div>
+                    <p id="description">
+                        <span style="font-weight: bold; color: #29469B; font-size: 16px;">
+                            Pineapple Power: Pineapple Feast
+                        </span>
+                        Any image will trigger a reaction from the pineapple lover. A true pineapple lover will always 
+                        be able to distinguish between real pineapples and imposters.
+                    </p>
+                    <hr/>
+                    <div id="verdict">
+                        <span style="font-weight: bold; color: black; font-size: 18px;">
+                            Final Verdict
+                        </span>
+                        <span id="verdictText">This may be a pineapple...or is it?</span>
+                        <span id="verdictProb">95</span>
+                    </div>
+                    <hr/>
+                    <div id="topKPredictions"></div>
+                    <p id="hint">Choose another file to try again! Why don't you keep testing our favorite pineapple lover?</p>
+                </div>
             </div>
+            <p style="font-size: 8px; margin: 0px; display:flex; justify-content: center; height: 20px; align-items: center;">
+                Based on Charizard card from Pokemon TCG
+            </p>
         </div>
     </body>
 
