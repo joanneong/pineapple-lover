@@ -13,13 +13,29 @@ const imgInput = document.getElementById('imgInput');
 const imgPreview = document.getElementById('imgPreview');
 const previewText = document.getElementById('previewText');
 const verdict = document.getElementById('verdict');
+const verdictProb = document.getElementById('verdictProb');
 const verdictText = document.getElementById('verdictText');
+
+function resetKPredictions() {
+    const nextPredictions = document.getElementById("topKPredictions");
+    nextPredictions.replaceChildren();
+    [1,2,3].forEach(x => {
+        const nextPrediction = document.createElement("p");
+        nextPrediction.textContent = '???';
+        const nextPredictionValue = document.createElement("span");
+        nextPredictionValue.textContent = '????';
+        nextPrediction.appendChild(nextPredictionValue);
+        nextPredictions.appendChild(nextPrediction);
+    });
+}
 
 function resetElements() {
     imgPreview.src = '#';
     imgPreview.style.display = 'none';
     previewText.style.display = 'block';
-    verdict.style.display = 'none';
+    verdictProb.innerText = '??';
+    verdictText.innerText = 'This may be a pineapple...or is it?';
+    resetKPredictions();
 }
 
 imgInput.addEventListener('change', event => {

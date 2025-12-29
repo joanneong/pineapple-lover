@@ -7,7 +7,28 @@
     <body class="container">
         <div class="cardBorder">
             <div class="card">
-                <h2 style="margin-top: 0;">Pineapple Lover</h2>
+                <div id="topHeader">
+                    <p style="font-weight: bold; font-style: italic;">
+                        Evolves from Binnie
+                    </p>
+                    <p>
+                        Put Pineapple Lover on the Stage 1 Card
+                    </p>
+                </div>
+                <div id="bottomHeader">
+                    <div id="stage2">
+                        <img src="assets/stage2.svg"/>
+                    </div>
+                    <p style="margin: 0; font-weight: bolder; font-size: 22px; margin-left: 70px;">
+                        Pineapple Lover
+                    </p>
+                    <p id="headerHp">
+                        100 HP
+                    </p>
+                    <div id="star">
+                        <img src="assets/star.svg"/>
+                    </div>
+                </div>
                 <div id="preview">
                     <img id="imgPreview" src="#" alt="User uploaded image preview">
                     <p id="previewText">Choose an image file to begin!</p>
@@ -25,14 +46,26 @@
                     </p>
                     <hr/>
                     <div id="verdict">
-                        <span style="font-weight: bold; color: black; font-size: 18px;">
-                            Final Verdict
+                        <div id="stars">
+                            <img src="assets/star.svg"/>
+                            <img src="assets/star.svg"/>
+                            <img src="assets/star.svg"/>
+                            <img src="assets/star.svg"/>
+                        </div>
+                        <span id="fullVerdict">
+                            <span style="font-weight: bold; color: black; font-size: 18px; margin-right: 5px;">
+                                Final Verdict
+                            </span>
+                            <span id="verdictText">This may be a pineapple...or is it?</span>
                         </span>
-                        <span id="verdictText">This may be a pineapple...or is it?</span>
-                        <span id="verdictProb">95</span>
+                        <span id="verdictProb">??</span>
                     </div>
                     <hr/>
-                    <div id="topKPredictions"></div>
+                    <div id="topKPredictions">
+                        <p>???<span>????</span></p>
+                        <p>???<span>????</span></p>
+                        <p>???<span>????</span></p>
+                    </div>
                     <p id="hint">Choose another file to try again! Why don't you keep testing our favorite pineapple lover?</p>
                 </div>
             </div>

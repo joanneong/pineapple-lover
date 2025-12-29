@@ -22,12 +22,12 @@ hr {
     border-radius: 15px;
     padding: 20px;
     background-color: #F7DC5F;
-    height: 590px;
+    height: 610px;
 }
 
 .card {
-    padding: 20px;
-    height: 550px;
+    padding: 10px 20px;
+    height: 590px;
     width: 400px;
     background-image: url("assets/card.png");
 }
@@ -54,6 +54,65 @@ input {
     font-weight: bold;
 }
 
+#topHeader {
+    display: flex;
+    flex-direction: horizontal;
+    justify-content: space-between;
+    padding-left: 50px;
+    margin-bottom: 0px;
+}
+
+#topHeader p {
+    margin: 0px;
+    font-size: 12px;
+}
+
+#bottomHeader {
+    display: flex;
+    flex-direction: horizontal;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+    margin-bottom: 3px;
+    border-top: 1px solid transparent;
+    border-image: linear-gradient(to right, #A38D35, #EAD68C) 1 0 0 0;
+    height: 25px;
+    position: relative;
+}
+
+#stage2 {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    top: -10px;
+    left: -20px;
+}
+
+#stage2 img {
+    width: 100%;
+    height: auto;
+}
+
+#headerHp {
+    margin: 0; 
+    margin-left: auto; 
+    display: flex; 
+    align-items: center;
+    font-size: 22px;
+    font-weight: bold;
+    color: #DA352F;
+}
+
+#star {
+    height: 30px;
+    width: 30px;
+}
+
+#star img {
+    width: 100%;
+    height: auto;
+}
+
 #description {
     margin-top: 10px;
     margin-left: 18px;
@@ -68,6 +127,7 @@ input {
     justify-content: center;
     align-items: center;
     margin: 10px 10px;
+    margin-top: 0px;
     box-shadow: 5px 5px 8px 0px #673D32;
     background-color: white;
 }
@@ -88,6 +148,27 @@ input {
     padding: 5px;
     justify-content: space-between;
     align-items: center;
+    height: 60px;
+}
+
+#stars {
+    height: auto;
+    width: 80px;
+    padding: 0px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#stars img {
+    height: 30px;
+    width: 30px;
+    margin: 1px;
+}
+
+#fullVerdict {
+    margin-left: 10px;
+    width: 60%;
 }
 
 #verdictProb {
@@ -97,6 +178,7 @@ input {
 
 #topKPredictions {
     margin: 0;
+    margin-bottom: 5px;
     display: flex;
     justify-content: space-around;
     font-size: 12px;
