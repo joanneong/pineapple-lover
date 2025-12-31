@@ -25,9 +25,11 @@ function resetKPredictions() {
     nextPredictions.replaceChildren();
     [1,2,3].forEach(x => {
         const nextPrediction = document.createElement("p");
-        nextPrediction.textContent = '???';
+        const nextPredictionText = document.createElement("span");
+        nextPredictionText.textContent = '???';
         const nextPredictionValue = document.createElement("span");
         nextPredictionValue.textContent = '????';
+        nextPrediction.appendChild(nextPredictionText);
         nextPrediction.appendChild(nextPredictionValue);
         nextPredictions.appendChild(nextPrediction);
     });
@@ -71,9 +73,11 @@ imgPreview.onload = async() => {
     nextPredictions.replaceChildren();
     topK.forEach(x => {
         const nextPrediction = document.createElement("p");
-        nextPrediction.textContent = x.label;
+        const nextPredictionText = document.createElement("span");
+        nextPredictionText.textContent = x.label;
         const nextPredictionValue = document.createElement("span");
         nextPredictionValue.textContent = (x.value * 100).toFixed(2);
+        nextPrediction.appendChild(nextPredictionText);
         nextPrediction.appendChild(nextPredictionValue);
         nextPredictions.appendChild(nextPrediction);
     });

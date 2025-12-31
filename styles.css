@@ -210,8 +210,16 @@ input {
     display: flex;
     flex-direction: column;
     align-items: center;
+    max-width: 30%;
 }
 
+#topKPredictions p > *:first-child {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    height: 15px;
+    max-width: 100%;
+}
 
 #hint {
     border: 3px solid transparent;
@@ -221,7 +229,4 @@ input {
     font-style: italic;
     padding: 5px;
     margin: 0px;
-    /* border-image: linear-gradient(to right bottom, red, blue) 1 1 0 0, linear-gradient(to left top, red, blue) 0 0 1 1; */
-    /* border-image: linear-gradient(to left top, red, blue) 0 0 1 1; */
-    /* background: linear-gradient(to right bottom, red, blue) 1 1 0 0, linear-gradient(to left top, red, blue) 0 0 1 1; */
 }
