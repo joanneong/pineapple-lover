@@ -2,19 +2,23 @@ import {MobileNet} from './mobilenet.js';
 
 let mobileNet;
 
-window.addEventListener('load', () => {
-    console.time('Loading mobileNet');
-    mobileNet = new MobileNet();
-    mobileNet.load();
-    console.timeEnd('Loading mobileNet');
-});
-
+const loader = document.getElementById("initialLoader");
+const card = document.getElementsByClassName("cardBorder")[0];
 const imgInput = document.getElementById('imgInput');
 const imgPreview = document.getElementById('imgPreview');
 const previewText = document.getElementById('previewText');
 const verdict = document.getElementById('verdict');
 const verdictProb = document.getElementById('verdictProb');
 const verdictText = document.getElementById('verdictText');
+
+window.addEventListener('load', () => {
+    console.time('Loading mobileNet');
+    mobileNet = new MobileNet();
+    mobileNet.load();
+    console.timeEnd('Loading mobileNet');
+    loader.style.display = 'none';
+    card.style.display = 'block';
+});
 
 function resetKPredictions() {
     const nextPredictions = document.getElementById("topKPredictions");
